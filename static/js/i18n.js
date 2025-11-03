@@ -1,0 +1,245 @@
+// Internationalization - الترجمة
+
+const i18n = {
+    ar: {
+        // Navigation
+        nav_home: 'الرئيسية',
+        nav_upload: 'رفع البيانات',
+        nav_database: 'قاعدة البيانات',
+        nav_train: 'التدريب',
+        nav_predict: 'التنبؤ',
+        nav_models: 'النماذج',
+        nav_reports: 'التقارير',
+        nav_settings: 'الإعدادات',
+        lang_switch: 'English',
+        user_admin: 'المسؤول',
+        profile: 'الملف الشخصي',
+        logout: 'تسجيل الخروج',
+        
+        // Home Page
+        home_title: 'لوحة التحكم الرئيسية',
+        home_welcome: 'مرحباً بك في نظام الموارد البشرية الذكي',
+        stat_models: 'النماذج المدربة',
+        stat_predictions: 'التنبؤات',
+        stat_accuracy: 'متوسط الدقة',
+        stat_employees: 'الموظفون',
+        recent_training: 'عمليات التدريب الأخيرة',
+        model_performance: 'أداء النماذج',
+        
+        // Upload Page
+        upload_title: 'رفع البيانات',
+        upload_subtitle: 'قم برفع ملف البيانات للتدريب أو التنبؤ',
+        upload_select_file: 'اختر ملف',
+        upload_supported_formats: 'الصيغ المدعومة: CSV, XLSX, XLS, TSV, JSON, Parquet',
+        upload_button: 'رفع الملف',
+        upload_success: 'تم رفع الملف بنجاح',
+        upload_error: 'خطأ في رفع الملف',
+        
+        // Database Page
+        db_title: 'ربط قاعدة البيانات',
+        db_subtitle: 'قم بإدخال معلومات الاتصال بقاعدة بيانات SQL Server',
+        db_host: 'عنوان الخادم',
+        db_port: 'المنفذ',
+        db_name: 'اسم قاعدة البيانات',
+        db_username: 'اسم المستخدم',
+        db_password: 'كلمة المرور',
+        db_test: 'اختبار الاتصال',
+        db_save: 'حفظ الإعدادات',
+        db_tables: 'الجداول المتاحة',
+        db_success: 'تم الاتصال بنجاح',
+        db_error: 'فشل الاتصال',
+        
+        // Training Page
+        train_title: 'تدريب النموذج',
+        train_subtitle: 'قم بتدريب نموذج جديد على البيانات',
+        train_model_type: 'نوع النموذج',
+        train_random_forest: 'Random Forest',
+        train_gradient_boosting: 'Gradient Boosting',
+        train_cross_validation: 'استخدام التحقق المتقاطع',
+        train_start: 'بدء التدريب',
+        train_progress: 'جاري التدريب...',
+        train_success: 'تم التدريب بنجاح',
+        train_error: 'خطأ في التدريب',
+        train_history: 'سجل التدريب',
+        
+        // Prediction Page
+        predict_title: 'التنبؤ',
+        predict_subtitle: 'أدخل بيانات الموظف للحصول على تنبؤ',
+        predict_button: 'تنبؤ',
+        predict_result: 'نتيجة التنبؤ',
+        predict_eligible: 'مؤهل للترقية',
+        predict_not_eligible: 'غير مؤهل للترقية',
+        predict_confidence: 'مستوى الثقة',
+        
+        // Models Page
+        models_title: 'إدارة النماذج',
+        models_subtitle: 'عرض وإدارة النماذج المحفوظة',
+        models_current: 'النموذج الحالي',
+        models_saved: 'النماذج المحفوظة',
+        models_delete: 'حذف',
+        models_export: 'تصدير',
+        models_import: 'استيراد',
+        models_load: 'تحميل',
+        
+        // Reports Page
+        reports_title: 'التقارير والإحصائيات',
+        reports_subtitle: 'تقارير مفصلة عن أداء النظام',
+        reports_accuracy_trend: 'اتجاه الدقة',
+        reports_predictions_count: 'عدد التنبؤات',
+        reports_model_comparison: 'مقارنة النماذج',
+        reports_export: 'تصدير التقرير',
+        
+        // Settings Page
+        settings_title: 'الإعدادات',
+        settings_subtitle: 'إعدادات النظام والتفضيلات',
+        settings_language: 'اللغة',
+        settings_theme: 'المظهر',
+        settings_notifications: 'الإشعارات',
+        settings_save: 'حفظ الإعدادات',
+        settings_reset: 'إعادة تعيين',
+        
+        // Common
+        loading: 'جاري التحميل...',
+        save: 'حفظ',
+        cancel: 'إلغاء',
+        delete: 'حذف',
+        edit: 'تعديل',
+        view: 'عرض',
+        download: 'تحميل',
+        upload: 'رفع',
+        search: 'بحث',
+        filter: 'تصفية',
+        export: 'تصدير',
+        import: 'استيراد',
+        refresh: 'تحديث',
+        close: 'إغلاق',
+        confirm: 'تأكيد',
+        yes: 'نعم',
+        no: 'لا',
+        success: 'نجح',
+        error: 'خطأ',
+        warning: 'تحذير',
+        info: 'معلومات'
+    },
+    en: {
+        // Navigation
+        nav_home: 'Home',
+        nav_upload: 'Upload Data',
+        nav_database: 'Database',
+        nav_train: 'Training',
+        nav_predict: 'Prediction',
+        nav_models: 'Models',
+        nav_reports: 'Reports',
+        nav_settings: 'Settings',
+        lang_switch: 'العربية',
+        user_admin: 'Admin',
+        profile: 'Profile',
+        logout: 'Logout',
+        
+        // Home Page
+        home_title: 'Main Dashboard',
+        home_welcome: 'Welcome to Smart HR System',
+        stat_models: 'Trained Models',
+        stat_predictions: 'Predictions',
+        stat_accuracy: 'Average Accuracy',
+        stat_employees: 'Employees',
+        recent_training: 'Recent Training',
+        model_performance: 'Model Performance',
+        
+        // Upload Page
+        upload_title: 'Upload Data',
+        upload_subtitle: 'Upload data file for training or prediction',
+        upload_select_file: 'Select File',
+        upload_supported_formats: 'Supported formats: CSV, XLSX, XLS, TSV, JSON, Parquet',
+        upload_button: 'Upload File',
+        upload_success: 'File uploaded successfully',
+        upload_error: 'Error uploading file',
+        
+        // Database Page
+        db_title: 'Database Connection',
+        db_subtitle: 'Enter SQL Server database connection information',
+        db_host: 'Server Host',
+        db_port: 'Port',
+        db_name: 'Database Name',
+        db_username: 'Username',
+        db_password: 'Password',
+        db_test: 'Test Connection',
+        db_save: 'Save Configuration',
+        db_tables: 'Available Tables',
+        db_success: 'Connection successful',
+        db_error: 'Connection failed',
+        
+        // Training Page
+        train_title: 'Model Training',
+        train_subtitle: 'Train a new model on the data',
+        train_model_type: 'Model Type',
+        train_random_forest: 'Random Forest',
+        train_gradient_boosting: 'Gradient Boosting',
+        train_cross_validation: 'Use Cross Validation',
+        train_start: 'Start Training',
+        train_progress: 'Training in progress...',
+        train_success: 'Training completed successfully',
+        train_error: 'Training error',
+        train_history: 'Training History',
+        
+        // Prediction Page
+        predict_title: 'Prediction',
+        predict_subtitle: 'Enter employee data to get prediction',
+        predict_button: 'Predict',
+        predict_result: 'Prediction Result',
+        predict_eligible: 'Eligible for Promotion',
+        predict_not_eligible: 'Not Eligible for Promotion',
+        predict_confidence: 'Confidence Level',
+        
+        // Models Page
+        models_title: 'Model Management',
+        models_subtitle: 'View and manage saved models',
+        models_current: 'Current Model',
+        models_saved: 'Saved Models',
+        models_delete: 'Delete',
+        models_export: 'Export',
+        models_import: 'Import',
+        models_load: 'Load',
+        
+        // Reports Page
+        reports_title: 'Reports and Statistics',
+        reports_subtitle: 'Detailed reports on system performance',
+        reports_accuracy_trend: 'Accuracy Trend',
+        reports_predictions_count: 'Predictions Count',
+        reports_model_comparison: 'Model Comparison',
+        reports_export: 'Export Report',
+        
+        // Settings Page
+        settings_title: 'Settings',
+        settings_subtitle: 'System settings and preferences',
+        settings_language: 'Language',
+        settings_theme: 'Theme',
+        settings_notifications: 'Notifications',
+        settings_save: 'Save Settings',
+        settings_reset: 'Reset',
+        
+        // Common
+        loading: 'Loading...',
+        save: 'Save',
+        cancel: 'Cancel',
+        delete: 'Delete',
+        edit: 'Edit',
+        view: 'View',
+        download: 'Download',
+        upload: 'Upload',
+        search: 'Search',
+        filter: 'Filter',
+        export: 'Export',
+        import: 'Import',
+        refresh: 'Refresh',
+        close: 'Close',
+        confirm: 'Confirm',
+        yes: 'Yes',
+        no: 'No',
+        success: 'Success',
+        error: 'Error',
+        warning: 'Warning',
+        info: 'Information'
+    }
+};
+

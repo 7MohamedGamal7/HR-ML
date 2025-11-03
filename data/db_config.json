@@ -1,0 +1,10 @@
+{
+  "host": "ELDAWLIYA-SYSTE",
+  "port": 1433,
+  "database": "El_Dawliya_International",
+  "username": "admin",
+  "password": "hgslduhgfwdv",
+  "driver": "ODBC Driver 17 for SQL Server",
+  "timeout": 30,
+  "default_table": "Tbl_Employee"
+}

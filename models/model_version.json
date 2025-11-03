@@ -1,0 +1,19 @@
+{
+  "model_path": "F:\\hana_AI\\workspace\\hr-model\\models\\promotion_model.joblib",
+  "saved_at": "2025-11-03T17:44:02.061264",
+  "model_type": "RandomForestClassifier",
+  "metadata": {
+    "training_samples": 50,
+    "features": [
+      "experience",
+      "education_level",
+      "performance_score",
+      "training_hours",
+      "awards",
+      "avg_work_hours",
+      "department",
+      "gender"
+    ],
+    "model_type": "random_forest"
+  }
+}

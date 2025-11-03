@@ -1,0 +1,130 @@
+2025-11-03 17:34:48.357 | INFO     | run:startup_event:76 - ============================================================
+2025-11-03 17:34:48.357 | INFO     | run:startup_event:77 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-03 17:34:48.357 | INFO     | run:startup_event:78 - 📌 الإصدار: 2.0.0
+2025-11-03 17:34:48.357 | INFO     | run:startup_event:79 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-03 17:34:48.357 | INFO     | run:startup_event:80 - ============================================================
+2025-11-03 15:45:33.185 | INFO     | run:startup_event:76 - ============================================================
+2025-11-03 15:45:33.185 | INFO     | run:startup_event:77 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-03 15:45:33.186 | INFO     | run:startup_event:78 - 📌 الإصدار: 2.0.0
+2025-11-03 15:45:33.186 | INFO     | run:startup_event:79 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-03 15:45:33.186 | INFO     | run:startup_event:80 - ============================================================
+2025-11-03 15:45:58.806 | INFO     | app.model_utils:load_model:213 - تم تحميل النموذج من: /app/models/promotion_model.joblib
+2025-11-03 15:45:58.902 | INFO     | routers.predict:predict_promotion:145 - تنبؤ للموظف: {'experience': 5.0, 'education_level': 7, 'performance_score': 85.0, 'training_hours': 40.0, 'awards': 2, 'avg_work_hours': 8.5, 'department': 'it', 'gender': 'male'} => 1 (ثقة: 1.00)
+2025-11-03 15:49:03.851 | INFO     | routers.upload:upload_dataset:64 - تم حفظ الملف: /app/data/raw_dataset.xlsx
+2025-11-03 15:49:04.250 | INFO     | app.data_utils:clean_df:35 - بدء تنظيف البيانات. الصفوف الأولية: 242
+2025-11-03 15:49:04.261 | INFO     | app.data_utils:clean_df:73 - اكتمل تنظيف البيانات. الصفوف النهائية: 242
+2025-11-03 15:49:04.268 | WARNING  | routers.upload:upload_dataset:92 - مشاكل في البيانات: ['الأعمدة المفقودة: experience, education_level, performance_score, training_hours, awards, avg_work_hours, department, gender, promotion_eligible', "العمود '7' يحتوي على أكثر من 50% قيم مفقودة", "العمود '9' يحتوي على أكثر من 50% قيم مفقودة", "العمود '14' يحتوي على أكثر من 50% قيم مفقودة", "العمود '32' يحتوي على أكثر من 50% قيم مفقودة", "العمود '51' يحتوي على أكثر من 50% قيم مفقودة", "العمود '55' يحتوي على أكثر من 50% قيم مفقودة", "العمود '60' يحتوي على أكثر من 50% قيم مفقودة", "العمود '76' يحتوي على أكثر من 50% قيم مفقودة", "العمود '77' يحتوي على أكثر من 50% قيم مفقودة", "العمود '82' يحتوي على أكثر من 50% قيم مفقودة", "العمود '83' يحتوي على أكثر من 50% قيم مفقودة", "العمود '90' يحتوي على أكثر من 50% قيم مفقودة", "العمود 'Unnamed: 100' يحتوي على أكثر من 50% قيم مفقودة"]
+2025-11-03 15:49:04.283 | INFO     | routers.upload:upload_dataset:99 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv
+2025-11-03 15:51:27.030 | INFO     | run:shutdown_event:86 - ⏹️  إيقاف النظام...
+2025-11-03 15:51:46.062 | INFO     | run:startup_event:76 - ============================================================
+2025-11-03 15:51:46.063 | INFO     | run:startup_event:77 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-03 15:51:46.063 | INFO     | run:startup_event:78 - 📌 الإصدار: 2.0.0
+2025-11-03 15:51:46.063 | INFO     | run:startup_event:79 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-03 15:51:46.063 | INFO     | run:startup_event:80 - ============================================================
+2025-11-03 15:52:02.364 | INFO     | app.model_utils:load_model:213 - تم تحميل النموذج من: /app/models/promotion_model.joblib
+2025-11-03 15:52:02.439 | INFO     | routers.predict:predict_promotion:145 - تنبؤ للموظف: {'experience': 5.0, 'education_level': 7, 'performance_score': 85.0, 'training_hours': 40.0, 'awards': 2, 'avg_work_hours': 8.5, 'department': 'it', 'gender': 'male'} => 1 (ثقة: 1.00)
+2025-11-03 15:52:31.032 | INFO     | run:shutdown_event:86 - ⏹️  إيقاف النظام...
+2025-11-03 15:54:41.653 | INFO     | run:startup_event:76 - ============================================================
+2025-11-03 15:54:41.653 | INFO     | run:startup_event:77 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-03 15:54:41.653 | INFO     | run:startup_event:78 - 📌 الإصدار: 2.0.0
+2025-11-03 15:54:41.653 | INFO     | run:startup_event:79 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-03 15:54:41.653 | INFO     | run:startup_event:80 - ============================================================
+2025-11-03 16:01:16.514 | INFO     | routers.upload:upload_dataset:64 - تم حفظ الملف: /app/data/raw_dataset.xlsx
+2025-11-03 16:01:16.523 | ERROR    | routers.upload:upload_dataset:73 - فشل في قراءة الملف: Excel file format cannot be determined, you must specify an engine manually.
+2025-11-03 16:03:29.060 | INFO     | run:shutdown_event:86 - ⏹️  إيقاف النظام...
+2025-11-03 16:04:57.075 | INFO     | run:startup_event:76 - ============================================================
+2025-11-03 16:04:57.076 | INFO     | run:startup_event:77 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-03 16:04:57.076 | INFO     | run:startup_event:78 - 📌 الإصدار: 2.0.0
+2025-11-03 16:04:57.076 | INFO     | run:startup_event:79 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-03 16:04:57.077 | INFO     | run:startup_event:80 - ============================================================
+2025-11-03 16:07:09.489 | INFO     | routers.upload:upload_dataset:76 - تم حفظ الملف: /app/data/raw_dataset.json (الحجم: 1.13 KB)
+2025-11-03 16:07:09.490 | INFO     | app.data_utils:read_data_file:44 - قراءة ملف بصيغة: .json
+2025-11-03 16:07:09.515 | INFO     | app.data_utils:read_data_file:104 - تم قراءة JSON بنجاح باستخدام orientation: records
+2025-11-03 16:07:09.515 | INFO     | routers.upload:upload_dataset:81 - تم قراءة البيانات بنجاح: 5 صف، 9 عمود
+2025-11-03 16:07:09.515 | INFO     | app.data_utils:clean_df:167 - بدء تنظيف البيانات. الصفوف الأولية: 5
+2025-11-03 16:07:09.529 | INFO     | app.data_utils:clean_df:205 - اكتمل تنظيف البيانات. الصفوف النهائية: 5
+2025-11-03 16:07:09.534 | INFO     | routers.upload:upload_dataset:109 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv
+2025-11-03 16:07:16.624 | INFO     | routers.upload:upload_dataset:76 - تم حفظ الملف: /app/data/raw_dataset.tsv (الحجم: 0.26 KB)
+2025-11-03 16:07:16.624 | INFO     | app.data_utils:read_data_file:44 - قراءة ملف بصيغة: .tsv
+2025-11-03 16:07:16.636 | INFO     | app.data_utils:read_data_file:64 - تم قراءة TSV بنجاح باستخدام ترميز: utf-8
+2025-11-03 16:07:16.636 | INFO     | routers.upload:upload_dataset:81 - تم قراءة البيانات بنجاح: 5 صف، 9 عمود
+2025-11-03 16:07:16.637 | INFO     | app.data_utils:clean_df:167 - بدء تنظيف البيانات. الصفوف الأولية: 5
+2025-11-03 16:07:16.641 | INFO     | app.data_utils:clean_df:205 - اكتمل تنظيف البيانات. الصفوف النهائية: 5
+2025-11-03 16:07:16.643 | INFO     | routers.upload:upload_dataset:109 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv
+2025-11-03 16:07:35.961 | INFO     | routers.upload:upload_dataset:76 - تم حفظ الملف: /app/data/raw_dataset.xlsx (الحجم: 905.59 KB)
+2025-11-03 16:07:35.961 | INFO     | app.data_utils:read_data_file:44 - قراءة ملف بصيغة: .xlsx
+2025-11-03 16:07:36.117 | ERROR    | app.data_utils:read_data_file:153 - خطأ في قراءة الملف /app/data/raw_dataset.xlsx: File is not a zip file
+2025-11-03 16:07:36.118 | ERROR    | routers.upload:upload_dataset:83 - فشل في قراءة الملف: File is not a zip file
+2025-11-03 16:07:42.957 | INFO     | app.policy_manager:search_policies:225 - تم العثور على 0 سياسة
+2025-11-03 16:07:53.273 | INFO     | routers.upload:upload_dataset:76 - تم حفظ الملف: /app/data/raw_dataset.xlsx (الحجم: 5.17 KB)
+2025-11-03 16:07:53.273 | INFO     | app.data_utils:read_data_file:44 - قراءة ملف بصيغة: .xlsx
+2025-11-03 16:07:53.300 | INFO     | app.data_utils:read_data_file:73 - تم قراءة ملف Excel (.xlsx) بنجاح
+2025-11-03 16:07:53.300 | INFO     | routers.upload:upload_dataset:81 - تم قراءة البيانات بنجاح: 5 صف، 9 عمود
+2025-11-03 16:07:53.300 | INFO     | app.data_utils:clean_df:167 - بدء تنظيف البيانات. الصفوف الأولية: 5
+2025-11-03 16:07:53.306 | INFO     | app.data_utils:clean_df:205 - اكتمل تنظيف البيانات. الصفوف النهائية: 5
+2025-11-03 16:07:53.308 | INFO     | routers.upload:upload_dataset:109 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv
+2025-11-03 16:07:59.083 | INFO     | routers.upload:upload_dataset:76 - تم حفظ الملف: /app/data/raw_dataset.txt (الحجم: 0.26 KB)
+2025-11-03 16:07:59.083 | INFO     | app.data_utils:read_data_file:44 - قراءة ملف بصيغة: .txt
+2025-11-03 16:07:59.091 | INFO     | app.data_utils:read_data_file:135 - تم قراءة ملف TXT كـ CSV بنجاح
+2025-11-03 16:07:59.091 | INFO     | routers.upload:upload_dataset:81 - تم قراءة البيانات بنجاح: 5 صف، 9 عمود
+2025-11-03 16:07:59.092 | INFO     | app.data_utils:clean_df:167 - بدء تنظيف البيانات. الصفوف الأولية: 5
+2025-11-03 16:07:59.093 | INFO     | app.data_utils:clean_df:205 - اكتمل تنظيف البيانات. الصفوف النهائية: 5
+2025-11-03 16:07:59.095 | INFO     | routers.upload:upload_dataset:109 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv
+2025-11-03 16:31:41.017 | INFO     | run:shutdown_event:86 - ⏹️  إيقاف النظام...
+2025-11-03 16:36:06.600 | INFO     | run:startup_event:76 - ============================================================
+2025-11-03 16:36:06.600 | INFO     | run:startup_event:77 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-03 16:36:06.600 | INFO     | run:startup_event:78 - 📌 الإصدار: 2.0.0
+2025-11-03 16:36:06.601 | INFO     | run:startup_event:79 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-03 16:36:06.601 | INFO     | run:startup_event:80 - ============================================================
+2025-11-03 16:37:59.736 | INFO     | app.database:get_pyodbc_connection:117 - الاتصال بـ SQL Server: localhost:1433/HR_Database
+2025-11-03 16:37:59.742 | ERROR    | app.database:test_connection:69 - ❌ فشل الاتصال بقاعدة البيانات: ('01000', "[01000] [unixODBC][Driver Manager]Can't open lib 'ODBC Driver 17 for SQL Server' : file not found (0) (SQLDriverConnect)")
+2025-11-03 16:37:59.742 | INFO     | app.database:get_pymssql_connection:127 - الاتصال بـ SQL Server (pymssql): localhost:1433/HR_Database
+2025-11-03 16:38:08.755 | ERROR    | app.database:test_connection:92 - ❌ فشل الاتصال بقاعدة البيانات (pymssql): (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\n')
+2025-11-03 16:42:10.126 | INFO     | routers.upload:upload_dataset:76 - تم حفظ الملف: /app/data/raw_dataset.xlsb (الحجم: 154.80 KB)
+2025-11-03 16:42:10.126 | INFO     | app.data_utils:read_data_file:45 - قراءة ملف بصيغة: .xlsb
+2025-11-03 16:42:10.261 | INFO     | app.data_utils:read_data_file:94 - تم قراءة ملف .xlsb بنجاح
+2025-11-03 16:42:10.262 | INFO     | routers.upload:upload_dataset:81 - تم قراءة البيانات بنجاح: 241 صف، 101 عمود
+2025-11-03 16:42:10.262 | INFO     | app.data_utils:clean_df:223 - بدء تنظيف البيانات. الصفوف الأولية: 241
+2025-11-03 16:42:10.271 | INFO     | app.data_utils:clean_df:264 - اكتمل تنظيف البيانات. الصفوف النهائية: 241
+2025-11-03 16:42:10.279 | WARNING  | routers.upload:upload_dataset:102 - مشاكل في البيانات: ['الأعمدة المفقودة: Age, Years_Since_Contract_Start, Salary_Total, Basic_Salary, Allowances, Insurance_Salary, Remaining_Contract_Renewal, Car_Ride_Time, Skill_level_measurement_certificate, Training_Hours, Performance_Score, Awards, Dept_Name, Jop_Name, Emp_Type, Working_Condition, Emp_Marital_Status, Governorate, Shift_Type, gender, Dept_Name, Jop_Name, Emp_Type, Working_Condition, Emp_Marital_Status, Governorate, Shift_Type, gender, promotion_eligible', "العمود '7' يحتوي على أكثر من 50% قيم مفقودة", "العمود '9' يحتوي على أكثر من 50% قيم مفقودة", "العمود '14' يحتوي على أكثر من 50% قيم مفقودة", "العمود '32' يحتوي على أكثر من 50% قيم مفقودة", "العمود '51' يحتوي على أكثر من 50% قيم مفقودة", "العمود '55' يحتوي على أكثر من 50% قيم مفقودة", "العمود '60' يحتوي على أكثر من 50% قيم مفقودة", "العمود '76' يحتوي على أكثر من 50% قيم مفقودة", "العمود '77' يحتوي على أكثر من 50% قيم مفقودة", "العمود '82' يحتوي على أكثر من 50% قيم مفقودة", "العمود '83' يحتوي على أكثر من 50% قيم مفقودة", "العمود '90' يحتوي على أكثر من 50% قيم مفقودة", "العمود 'Unnamed: 100' يحتوي على أكثر من 50% قيم مفقودة"]
+2025-11-03 16:42:10.289 | INFO     | routers.upload:upload_dataset:109 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv
+2025-11-03 16:42:28.630 | INFO     | routers.upload:upload_dataset:76 - تم حفظ الملف: /app/data/raw_dataset.xlsm (الحجم: 250.19 KB)
+2025-11-03 16:42:28.630 | INFO     | app.data_utils:read_data_file:45 - قراءة ملف بصيغة: .xlsm
+2025-11-03 16:42:28.916 | INFO     | app.data_utils:read_data_file:74 - تم قراءة ملف Excel (.xlsm) بنجاح
+2025-11-03 16:42:28.916 | INFO     | routers.upload:upload_dataset:81 - تم قراءة البيانات بنجاح: 242 صف، 101 عمود
+2025-11-03 16:42:28.916 | INFO     | app.data_utils:clean_df:223 - بدء تنظيف البيانات. الصفوف الأولية: 242
+2025-11-03 16:42:28.922 | INFO     | app.data_utils:clean_df:264 - اكتمل تنظيف البيانات. الصفوف النهائية: 242
+2025-11-03 16:42:28.928 | WARNING  | routers.upload:upload_dataset:102 - مشاكل في البيانات: ['الأعمدة المفقودة: Age, Years_Since_Contract_Start, Salary_Total, Basic_Salary, Allowances, Insurance_Salary, Remaining_Contract_Renewal, Car_Ride_Time, Skill_level_measurement_certificate, Training_Hours, Performance_Score, Awards, Dept_Name, Jop_Name, Emp_Type, Working_Condition, Emp_Marital_Status, Governorate, Shift_Type, gender, Dept_Name, Jop_Name, Emp_Type, Working_Condition, Emp_Marital_Status, Governorate, Shift_Type, gender, promotion_eligible', "العمود '7' يحتوي على أكثر من 50% قيم مفقودة", "العمود '9' يحتوي على أكثر من 50% قيم مفقودة", "العمود '14' يحتوي على أكثر من 50% قيم مفقودة", "العمود '32' يحتوي على أكثر من 50% قيم مفقودة", "العمود '51' يحتوي على أكثر من 50% قيم مفقودة", "العمود '55' يحتوي على أكثر من 50% قيم مفقودة", "العمود '60' يحتوي على أكثر من 50% قيم مفقودة", "العمود '76' يحتوي على أكثر من 50% قيم مفقودة", "العمود '77' يحتوي على أكثر من 50% قيم مفقودة", "العمود '82' يحتوي على أكثر من 50% قيم مفقودة", "العمود '83' يحتوي على أكثر من 50% قيم مفقودة", "العمود '90' يحتوي على أكثر من 50% قيم مفقودة", "العمود 'Unnamed: 100' يحتوي على أكثر من 50% قيم مفقودة"]
+2025-11-03 16:42:28.943 | INFO     | routers.upload:upload_dataset:109 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv
+2025-11-03 16:42:46.499 | INFO     | routers.train:train_model:65 - قراءة مجموعة البيانات...
+2025-11-03 16:43:48.291 | INFO     | routers.upload:upload_dataset:76 - تم حفظ الملف: /app/data/raw_dataset.xlsb (الحجم: 154.80 KB)
+2025-11-03 16:43:48.292 | INFO     | app.data_utils:read_data_file:45 - قراءة ملف بصيغة: .xlsb
+2025-11-03 16:43:48.359 | INFO     | app.data_utils:read_data_file:94 - تم قراءة ملف .xlsb بنجاح
+2025-11-03 16:43:48.359 | INFO     | routers.upload:upload_dataset:81 - تم قراءة البيانات بنجاح: 241 صف، 101 عمود
+2025-11-03 16:43:48.360 | INFO     | app.data_utils:clean_df:223 - بدء تنظيف البيانات. الصفوف الأولية: 241
+2025-11-03 16:43:48.363 | INFO     | app.data_utils:clean_df:264 - اكتمل تنظيف البيانات. الصفوف النهائية: 241
+2025-11-03 16:43:48.366 | WARNING  | routers.upload:upload_dataset:102 - مشاكل في البيانات: ['الأعمدة المفقودة: Age, Years_Since_Contract_Start, Salary_Total, Basic_Salary, Allowances, Insurance_Salary, Remaining_Contract_Renewal, Car_Ride_Time, Skill_level_measurement_certificate, Training_Hours, Performance_Score, Awards, Dept_Name, Jop_Name, Emp_Type, Working_Condition, Emp_Marital_Status, Governorate, Shift_Type, gender, Dept_Name, Jop_Name, Emp_Type, Working_Condition, Emp_Marital_Status, Governorate, Shift_Type, gender, promotion_eligible', "العمود '7' يحتوي على أكثر من 50% قيم مفقودة", "العمود '9' يحتوي على أكثر من 50% قيم مفقودة", "العمود '14' يحتوي على أكثر من 50% قيم مفقودة", "العمود '32' يحتوي على أكثر من 50% قيم مفقودة", "العمود '51' يحتوي على أكثر من 50% قيم مفقودة", "العمود '55' يحتوي على أكثر من 50% قيم مفقودة", "العمود '60' يحتوي على أكثر من 50% قيم مفقودة", "العمود '76' يحتوي على أكثر من 50% قيم مفقودة", "العمود '77' يحتوي على أكثر من 50% قيم مفقودة", "العمود '82' يحتوي على أكثر من 50% قيم مفقودة", "العمود '83' يحتوي على أكثر من 50% قيم مفقودة", "العمود '90' يحتوي على أكثر من 50% قيم مفقودة", "العمود 'Unnamed: 100' يحتوي على أكثر من 50% قيم مفقودة"]
+2025-11-03 16:43:48.372 | INFO     | routers.upload:upload_dataset:109 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv
+2025-11-03 16:44:17.670 | INFO     | routers.upload:upload_dataset:76 - تم حفظ الملف: /app/data/raw_dataset.xlsb (الحجم: 154.80 KB)
+2025-11-03 16:44:17.680 | INFO     | app.data_utils:read_data_file:45 - قراءة ملف بصيغة: .xlsb
+2025-11-03 16:44:17.782 | INFO     | app.data_utils:read_data_file:94 - تم قراءة ملف .xlsb بنجاح
+2025-11-03 16:44:17.782 | INFO     | routers.upload:upload_dataset:81 - تم قراءة البيانات بنجاح: 241 صف، 101 عمود
+2025-11-03 16:44:17.783 | INFO     | app.data_utils:clean_df:223 - بدء تنظيف البيانات. الصفوف الأولية: 241
+2025-11-03 16:44:17.789 | INFO     | app.data_utils:clean_df:264 - اكتمل تنظيف البيانات. الصفوف النهائية: 241
+2025-11-03 16:44:17.796 | WARNING  | routers.upload:upload_dataset:102 - مشاكل في البيانات: ['الأعمدة المفقودة: Age, Years_Since_Contract_Start, Salary_Total, Basic_Salary, Allowances, Insurance_Salary, Remaining_Contract_Renewal, Car_Ride_Time, Skill_level_measurement_certificate, Training_Hours, Performance_Score, Awards, Dept_Name, Jop_Name, Emp_Type, Working_Condition, Emp_Marital_Status, Governorate, Shift_Type, gender, Dept_Name, Jop_Name, Emp_Type, Working_Condition, Emp_Marital_Status, Governorate, Shift_Type, gender, promotion_eligible', "العمود '7' يحتوي على أكثر من 50% قيم مفقودة", "العمود '9' يحتوي على أكثر من 50% قيم مفقودة", "العمود '14' يحتوي على أكثر من 50% قيم مفقودة", "العمود '32' يحتوي على أكثر من 50% قيم مفقودة", "العمود '51' يحتوي على أكثر من 50% قيم مفقودة", "العمود '55' يحتوي على أكثر من 50% قيم مفقودة", "العمود '60' يحتوي على أكثر من 50% قيم مفقودة", "العمود '76' يحتوي على أكثر من 50% قيم مفقودة", "العمود '77' يحتوي على أكثر من 50% قيم مفقودة", "العمود '82' يحتوي على أكثر من 50% قيم مفقودة", "العمود '83' يحتوي على أكثر من 50% قيم مفقودة", "العمود '90' يحتوي على أكثر من 50% قيم مفقودة", "العمود 'Unnamed: 100' يحتوي على أكثر من 50% قيم مفقودة"]
+2025-11-03 16:44:17.807 | INFO     | routers.upload:upload_dataset:109 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv
+2025-11-03 16:59:24.745 | INFO     | routers.upload:upload_dataset:76 - تم حفظ الملف: /app/data/raw_dataset.xlsx (الحجم: 7.38 KB)
+2025-11-03 16:59:24.745 | INFO     | app.data_utils:read_data_file:45 - قراءة ملف بصيغة: .xlsx
+2025-11-03 16:59:24.765 | INFO     | app.data_utils:read_data_file:74 - تم قراءة ملف Excel (.xlsx) بنجاح
+2025-11-03 16:59:24.765 | INFO     | routers.upload:upload_dataset:81 - تم قراءة البيانات بنجاح: 20 صف، 20 عمود
+2025-11-03 16:59:24.765 | INFO     | app.data_utils:clean_df:223 - بدء تنظيف البيانات. الصفوف الأولية: 20
+2025-11-03 16:59:24.780 | INFO     | app.data_utils:clean_df:264 - اكتمل تنظيف البيانات. الصفوف النهائية: 20
+2025-11-03 16:59:24.782 | WARNING  | routers.upload:upload_dataset:102 - مشاكل في البيانات: ['الأعمدة المفقودة: promotion_eligible']
+2025-11-03 16:59:24.784 | INFO     | routers.upload:upload_dataset:109 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv
+2025-11-03 17:11:56.474 | INFO     | run:shutdown_event:86 - ⏹️  إيقاف النظام...
+2025-11-03 17:12:00.401 | INFO     | run:startup_event:76 - ============================================================
+2025-11-03 17:12:00.401 | INFO     | run:startup_event:77 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-03 17:12:00.402 | INFO     | run:startup_event:78 - 📌 الإصدار: 2.0.0
+2025-11-03 17:12:00.402 | INFO     | run:startup_event:79 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-03 17:12:00.402 | INFO     | run:startup_event:80 - ============================================================
+2025-11-03 17:16:55.625 | INFO     | run:shutdown_event:86 - ⏹️  إيقاف النظام...

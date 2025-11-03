@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - HR-ML Dashboard</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-brain"></i> HR-ML System</h3>
+                <button class="btn btn-sm btn-light" id="sidebarCollapse">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#home" data-page="home">
+                        <i class="fas fa-home"></i>
+                        <span class="nav-text" data-i18n="nav_home">الرئيسية</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#upload" data-page="upload">
+                        <i class="fas fa-upload"></i>
+                        <span class="nav-text" data-i18n="nav_upload">رفع البيانات</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#database" data-page="database">
+                        <i class="fas fa-database"></i>
+                        <span class="nav-text" data-i18n="nav_database">قاعدة البيانات</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#train" data-page="train">
+                        <i class="fas fa-brain"></i>
+                        <span class="nav-text" data-i18n="nav_train">التدريب</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#predict" data-page="predict">
+                        <i class="fas fa-magic"></i>
+                        <span class="nav-text" data-i18n="nav_predict">التنبؤ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#models" data-page="models">
+                        <i class="fas fa-cubes"></i>
+                        <span class="nav-text" data-i18n="nav_models">النماذج</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#reports" data-page="reports">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="nav-text" data-i18n="nav_reports">التقارير</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#settings" data-page="settings">
+                        <i class="fas fa-cog"></i>
+                        <span class="nav-text" data-i18n="nav_settings">الإعدادات</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <button class="btn btn-sm btn-outline-light w-100" onclick="toggleLanguage()">
+                    <i class="bi bi-translate"></i>
+                    <span id="langBtn" data-i18n="lang_switch">English</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Top Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapseTop" class="btn btn-primary">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <div class="ms-auto d-flex align-items-center">
+                        <div class="dropdown">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown">
+                                <i class="fas fa-user-circle"></i>
+                                <span data-i18n="user_admin">المسؤول</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> <span data-i18n="profile">الملف الشخصي</span></a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> <span data-i18n="logout">تسجيل الخروج</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content Area -->
+            <div class="container-fluid p-4">
+                <div id="pageContent">
+                    <!-- Content will be loaded here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery (optional, for easier DOM manipulation) -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    
+    <script src="../js/i18n.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/pages/home.js"></script>
+    <script src="../js/pages/upload.js"></script>
+    <script src="../js/pages/database.js"></script>
+    <script src="../js/pages/train.js"></script>
+    <script src="../js/pages/predict.js"></script>
+    <script src="../js/pages/models.js"></script>
+    <script src="../js/pages/reports.js"></script>
+    <script src="../js/pages/settings.js"></script>
+</body>
+</html>
+

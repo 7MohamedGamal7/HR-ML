@@ -1,0 +1,58 @@
+[
+  {
+    "experience": 5,
+    "education_level": 7,
+    "performance_score": 85,
+    "training_hours": 40,
+    "awards": 2,
+    "avg_work_hours": 8.5,
+    "department": "it",
+    "gender": "male",
+    "promotion_eligible": 1
+  },
+  {
+    "experience": 3,
+    "education_level": 6,
+    "performance_score": 70,
+    "training_hours": 25,
+    "awards": 1,
+    "avg_work_hours": 8.0,
+    "department": "hr",
+    "gender": "female",
+    "promotion_eligible": 0
+  },
+  {
+    "experience": 10,
+    "education_level": 9,
+    "performance_score": 95,
+    "training_hours": 80,
+    "awards": 5,
+    "avg_work_hours": 9.5,
+    "department": "sales",
+    "gender": "male",
+    "promotion_eligible": 1
+  },
+  {
+    "experience": 2,
+    "education_level": 5,
+    "performance_score": 60,
+    "training_hours": 15,
+    "awards": 0,
+    "avg_work_hours": 7.5,
+    "department": "finance",
+    "gender": "female",
+    "promotion_eligible": 0
+  },
+  {
+    "experience": 7,
+    "education_level": 8,
+    "performance_score": 88,
+    "training_hours": 50,
+    "awards": 3,
+    "avg_work_hours": 8.8,
+    "department": "it",
+    "gender": "male",
+    "promotion_eligible": 1
+  }
+]
+

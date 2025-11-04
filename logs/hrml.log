@@ -318,3 +318,71 @@
 2025-11-04 14:18:23.839 | INFO     | run:startup_event:85 - 📌 الإصدار: 2.0.0
 2025-11-04 14:18:23.839 | INFO     | run:startup_event:86 - 📚 الوثائق: http://localhost:8000/docs
 2025-11-04 14:18:23.839 | INFO     | run:startup_event:87 - ============================================================
+2025-11-04 15:23:38.424 | INFO     | app.database:get_pyodbc_connection:378 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: localhost:1433/HR_Database
+2025-11-04 15:23:53.484 | WARNING  | app.database:get_pyodbc_connection:382 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 15:23:53.484 | INFO     | app.database:get_available_drivers:319 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 15:23:53.485 | INFO     | app.database:get_best_driver:346 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 15:23:53.486 | ERROR    | app.database:test_connection:80 - ❌ فشل الاتصال بقاعدة البيانات: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 15:23:53.487 | INFO     | app.database:get_pymssql_connection:414 - الاتصال بـ SQL Server (pymssql): localhost:1433/HR_Database
+2025-11-04 15:24:02.513 | ERROR    | app.database:test_connection:103 - ❌ فشل الاتصال بقاعدة البيانات (pymssql): (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\n')
+2025-11-04 16:29:56.116 | INFO     | app.database:get_pyodbc_connection:378 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: localhost:1433/HR_Database
+2025-11-04 16:30:11.118 | WARNING  | app.database:get_pyodbc_connection:382 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 16:30:11.119 | INFO     | app.database:get_available_drivers:319 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 16:30:11.120 | INFO     | app.database:get_best_driver:346 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 16:30:11.120 | ERROR    | app.database:test_connection:80 - ❌ فشل الاتصال بقاعدة البيانات: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 16:30:11.121 | INFO     | app.database:get_pymssql_connection:414 - الاتصال بـ SQL Server (pymssql): localhost:1433/HR_Database
+2025-11-04 16:30:20.132 | ERROR    | app.database:test_connection:103 - ❌ فشل الاتصال بقاعدة البيانات (pymssql): (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\n')
+2025-11-04 16:30:23.631 | INFO     | routers.train:diagnose_database_connection:379 - 🔍 بدء التشخيص الشامل للاتصال - Starting comprehensive connection diagnosis
+2025-11-04 16:30:23.632 | INFO     | routers.train:diagnose_database_connection:380 - 📊 المعاملات المستلمة - Received params: host=ELDAWLIYA-SYSTE, port=1433, database=El_Dawliya_International, username=admin, password=***
+2025-11-04 16:30:23.632 | INFO     | routers.train:diagnose_database_connection:384 - 📝 استخدام معلومات اتصال مخصصة - Using custom connection info
+2025-11-04 16:30:23.633 | INFO     | app.database:diagnose_connection:199 - 🔍 بدء التشخيص الشامل - Starting comprehensive diagnosis
+2025-11-04 16:30:23.634 | INFO     | app.database:get_available_drivers:319 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 16:30:23.635 | INFO     | app.database:get_pyodbc_connection:378 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: ELDAWLIYA-SYSTE:1433/El_Dawliya_International
+2025-11-04 16:30:40.462 | WARNING  | app.database:get_pyodbc_connection:382 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 16:30:40.463 | INFO     | app.database:get_available_drivers:319 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 16:30:40.463 | INFO     | app.database:get_best_driver:346 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 16:30:40.464 | INFO     | app.database:diagnose_connection:307 - ✅ انتهى التشخيص - Status: error
+2025-11-04 16:31:29.261 | INFO     | app.database:get_pyodbc_connection:378 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: localhost:1433/HR_Database
+2025-11-04 16:31:44.263 | WARNING  | app.database:get_pyodbc_connection:382 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 16:31:44.263 | INFO     | app.database:get_available_drivers:319 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 16:31:44.263 | INFO     | app.database:get_best_driver:346 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 16:31:44.264 | ERROR    | app.database:test_connection:80 - ❌ فشل الاتصال بقاعدة البيانات: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 16:31:44.264 | INFO     | app.database:get_pymssql_connection:414 - الاتصال بـ SQL Server (pymssql): localhost:1433/HR_Database
+2025-11-04 16:31:53.274 | ERROR    | app.database:test_connection:103 - ❌ فشل الاتصال بقاعدة البيانات (pymssql): (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\n')
+2025-11-04 16:31:57.385 | INFO     | routers.train:diagnose_database_connection:379 - 🔍 بدء التشخيص الشامل للاتصال - Starting comprehensive connection diagnosis
+2025-11-04 16:31:57.385 | INFO     | routers.train:diagnose_database_connection:380 - 📊 المعاملات المستلمة - Received params: host=192.168.1.48, port=1433, database=El_Dawliya_International, username=admin, password=***
+2025-11-04 16:31:57.385 | INFO     | routers.train:diagnose_database_connection:384 - 📝 استخدام معلومات اتصال مخصصة - Using custom connection info
+2025-11-04 16:31:57.386 | INFO     | app.database:diagnose_connection:199 - 🔍 بدء التشخيص الشامل - Starting comprehensive diagnosis
+2025-11-04 16:31:57.386 | INFO     | app.database:get_available_drivers:319 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 16:31:57.386 | INFO     | app.database:get_pyodbc_connection:378 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: 192.168.1.48:1433/El_Dawliya_International
+2025-11-04 16:31:57.439 | INFO     | app.database:diagnose_connection:307 - ✅ انتهى التشخيص - Status: success
+2025-11-04 16:32:11.367 | INFO     | routers.train:save_database_config:505 - تم حفظ إعدادات قاعدة البيانات في data/db_config.json
+2025-11-04 16:32:15.312 | INFO     | routers.train:save_database_config:505 - تم حفظ إعدادات قاعدة البيانات في data/db_config.json
+2025-11-04 16:32:18.001 | INFO     | app.database:get_pyodbc_connection:378 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: localhost:1433/HR_Database
+2025-11-04 16:32:33.002 | WARNING  | app.database:get_pyodbc_connection:382 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 16:32:33.002 | INFO     | app.database:get_available_drivers:319 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 16:32:33.003 | INFO     | app.database:get_best_driver:346 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 16:32:33.003 | ERROR    | app.database:test_connection:80 - ❌ فشل الاتصال بقاعدة البيانات: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 16:32:33.004 | INFO     | app.database:get_pymssql_connection:414 - الاتصال بـ SQL Server (pymssql): localhost:1433/HR_Database
+2025-11-04 16:32:42.017 | ERROR    | app.database:test_connection:103 - ❌ فشل الاتصال بقاعدة البيانات (pymssql): (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\n')
+2025-11-04 16:33:22.021 | INFO     | routers.upload:upload_dataset:76 - تم حفظ الملف: /app/data/raw_dataset.xlsb (الحجم: 154.80 KB)
+2025-11-04 16:33:22.022 | INFO     | app.data_utils:read_data_file:45 - قراءة ملف بصيغة: .xlsb
+2025-11-04 16:33:22.179 | INFO     | app.data_utils:read_data_file:94 - تم قراءة ملف .xlsb بنجاح
+2025-11-04 16:33:22.179 | INFO     | routers.upload:upload_dataset:81 - تم قراءة البيانات بنجاح: 241 صف، 101 عمود
+2025-11-04 16:33:22.179 | INFO     | app.data_utils:clean_df:223 - بدء تنظيف البيانات. الصفوف الأولية: 241
+2025-11-04 16:33:22.201 | INFO     | app.data_utils:clean_df:264 - اكتمل تنظيف البيانات. الصفوف النهائية: 241
+2025-11-04 16:33:22.209 | WARNING  | routers.upload:upload_dataset:102 - مشاكل في البيانات: ['الأعمدة المفقودة: Age, Years_Since_Contract_Start, Salary_Total, Basic_Salary, Allowances, Insurance_Salary, Remaining_Contract_Renewal, Car_Ride_Time, Skill_level_measurement_certificate, Training_Hours, Performance_Score, Awards, Dept_Name, Jop_Name, Emp_Type, Working_Condition, Emp_Marital_Status, Governorate, Shift_Type, gender, Dept_Name, Jop_Name, Emp_Type, Working_Condition, Emp_Marital_Status, Governorate, Shift_Type, gender, promotion_eligible', "العمود '7' يحتوي على أكثر من 50% قيم مفقودة", "العمود '9' يحتوي على أكثر من 50% قيم مفقودة", "العمود '14' يحتوي على أكثر من 50% قيم مفقودة", "العمود '32' يحتوي على أكثر من 50% قيم مفقودة", "العمود '51' يحتوي على أكثر من 50% قيم مفقودة", "العمود '55' يحتوي على أكثر من 50% قيم مفقودة", "العمود '60' يحتوي على أكثر من 50% قيم مفقودة", "العمود '76' يحتوي على أكثر من 50% قيم مفقودة", "العمود '77' يحتوي على أكثر من 50% قيم مفقودة", "العمود '82' يحتوي على أكثر من 50% قيم مفقودة", "العمود '83' يحتوي على أكثر من 50% قيم مفقودة", "العمود '90' يحتوي على أكثر من 50% قيم مفقودة", "العمود 'Unnamed: 100' يحتوي على أكثر من 50% قيم مفقودة"]
+2025-11-04 16:33:22.238 | INFO     | routers.upload:upload_dataset:109 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv
+2025-11-04 16:38:40.948 | INFO     | run:shutdown_event:93 - ⏹️  إيقاف النظام...
+2025-11-04 16:40:36.770 | INFO     | run:startup_event:83 - ============================================================
+2025-11-04 16:40:36.770 | INFO     | run:startup_event:84 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-04 16:40:36.770 | INFO     | run:startup_event:85 - 📌 الإصدار: 2.0.0
+2025-11-04 16:40:36.770 | INFO     | run:startup_event:86 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-04 16:40:36.771 | INFO     | run:startup_event:87 - ============================================================
+2025-11-04 16:41:22.193 | INFO     | routers.upload:upload_dataset:139 - تم حفظ الملف: /app/data/raw_dataset.csv (الحجم: 0.80 KB)
+2025-11-04 16:41:22.193 | INFO     | app.data_utils:read_data_file:45 - قراءة ملف بصيغة: .csv
+2025-11-04 16:41:22.210 | INFO     | app.data_utils:read_data_file:54 - تم قراءة CSV بنجاح باستخدام ترميز: utf-8
+2025-11-04 16:41:22.210 | INFO     | routers.upload:upload_dataset:144 - تم قراءة البيانات بنجاح: 3 صف، 21 عمود
+2025-11-04 16:41:22.210 | INFO     | app.data_utils:clean_df:223 - بدء تنظيف البيانات. الصفوف الأولية: 3
+2025-11-04 16:41:22.227 | INFO     | app.data_utils:clean_df:264 - اكتمل تنظيف البيانات. الصفوف النهائية: 3
+2025-11-04 16:41:22.234 | INFO     | routers.upload:upload_dataset:172 - تم تنظيف وحفظ البيانات: /app/data/cleaned_dataset.csv

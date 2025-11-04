@@ -18,13 +18,47 @@ const API = {
     async uploadFile(file, lang = 'ar') {
         const formData = new FormData();
         formData.append('file', file);
-        
+
         try {
             const response = await fetch(`${API_BASE}/upload/dataset?lang=${lang}`, {
                 method: 'POST',
                 body: formData
             });
-            return await response.json();
+
+            // التحقق من نوع المحتوى - Check content type
+            const contentType = response.headers.get('content-type');
+
+            if (!response.ok) {
+                // محاولة قراءة رسالة الخطأ
+                let errorMessage = `HTTP ${response.status}`;
+
+                if (contentType && contentType.includes('application/json')) {
+                    const errorData = await response.json();
+                    errorMessage = errorData.detail || errorData.message || errorMessage;
+                } else {
+                    // إذا كانت الاستجابة HTML (خطأ داخلي)
+                    const errorText = await response.text();
+                    if (errorText.includes('Internal Server Error')) {
+                        errorMessage = lang === 'ar'
+                            ? 'خطأ داخلي في الخادم. يرجى التحقق من صيغة الملف والمحاولة مرة أخرى.'
+                            : 'Internal server error. Please check the file format and try again.';
+                    } else {
+                        errorMessage = errorText.substring(0, 200);
+                    }
+                }
+
+                throw new Error(errorMessage);
+            }
+
+            // التحقق من أن الاستجابة JSON صالحة
+            if (contentType && contentType.includes('application/json')) {
+                return await response.json();
+            } else {
+                throw new Error(lang === 'ar'
+                    ? 'استجابة غير صالحة من الخادم'
+                    : 'Invalid response from server');
+            }
+
         } catch (error) {
             console.error('Upload error:', error);
             throw error;

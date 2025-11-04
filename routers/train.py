@@ -350,6 +350,44 @@ async def test_database_connection(
         )
 
 
+@router.get("/database/diagnose")
+async def diagnose_database_connection(
+    lang: str = Query("ar", description="اللغة - Language (ar/en)")
+):
+    """
+    تشخيص شامل لمشكلة الاتصال بقاعدة البيانات - Comprehensive database connection diagnosis
+
+    يقوم بفحص شامل ويقدم توصيات للحل - Performs comprehensive check and provides recommendations
+
+    Returns:
+        تقرير تشخيصي - Diagnostic report
+    """
+    try:
+        logger.info("🔍 بدء التشخيص الشامل للاتصال - Starting comprehensive connection diagnosis")
+
+        diagnosis = db.diagnose_connection()
+
+        # إضافة رسائل مترجمة
+        if lang == "ar":
+            diagnosis["title"] = "تقرير التشخيص الشامل"
+            diagnosis["description"] = "فحص شامل لإعدادات الاتصال بقاعدة البيانات"
+        else:
+            diagnosis["title"] = "Comprehensive Diagnostic Report"
+            diagnosis["description"] = "Complete check of database connection settings"
+
+        return {
+            "detail": "تم إكمال التشخيص - Diagnosis completed",
+            "diagnosis": diagnosis
+        }
+
+    except Exception as e:
+        logger.error(f"خطأ في التشخيص: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"خطأ في التشخيص - Diagnosis error: {str(e)}"
+        )
+
+
 @router.get("/database/tables")
 async def list_database_tables(
     lang: str = Query("ar", description="اللغة - Language (ar/en)")

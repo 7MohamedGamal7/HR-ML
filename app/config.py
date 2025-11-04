@@ -229,7 +229,7 @@ SQL_SERVER_DATABASE = os.getenv("SQL_SERVER_DATABASE", "HR_Database")
 SQL_SERVER_USERNAME = os.getenv("SQL_SERVER_USERNAME", "sa")
 SQL_SERVER_PASSWORD = os.getenv("SQL_SERVER_PASSWORD", "")
 SQL_SERVER_DRIVER = os.getenv("SQL_SERVER_DRIVER", "ODBC Driver 17 for SQL Server")
-SQL_SERVER_TIMEOUT = int(os.getenv("SQL_SERVER_TIMEOUT", "30"))
+SQL_SERVER_TIMEOUT = int(os.getenv("SQL_SERVER_TIMEOUT", "60"))
 
 # جدول الموظفين الافتراضي - Default Employee Table
 DEFAULT_EMPLOYEE_TABLE = os.getenv("DEFAULT_EMPLOYEE_TABLE", "Employees")

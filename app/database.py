@@ -42,7 +42,7 @@ class DatabaseConnection:
     def test_connection(self) -> Dict[str, Any]:
         """
         اختبار الاتصال بقاعدة البيانات - Test database connection
-        
+
         Returns:
             نتيجة الاختبار - Test result
         """
@@ -54,9 +54,9 @@ class DatabaseConnection:
             version = cursor.fetchone()[0]
             cursor.close()
             conn.close()
-            
+
             logger.info(f"✅ الاتصال بقاعدة البيانات ناجح - SQL Server Version: {version[:50]}...")
-            
+
             return {
                 "success": True,
                 "message": "الاتصال بقاعدة البيانات ناجح - Connection successful",
@@ -64,10 +64,10 @@ class DatabaseConnection:
                 "database": self.database,
                 "version": version[:100]
             }
-        
+
         except Exception as e:
             logger.error(f"❌ فشل الاتصال بقاعدة البيانات: {e}")
-            
+
             # محاولة باستخدام pymssql كبديل
             try:
                 conn = self.get_pymssql_connection()
@@ -76,9 +76,9 @@ class DatabaseConnection:
                 version = cursor.fetchone()[0]
                 cursor.close()
                 conn.close()
-                
+
                 logger.info(f"✅ الاتصال بقاعدة البيانات ناجح (pymssql) - SQL Server Version: {version[:50]}...")
-                
+
                 return {
                     "success": True,
                     "message": "الاتصال بقاعدة البيانات ناجح (pymssql) - Connection successful",
@@ -87,16 +87,214 @@ class DatabaseConnection:
                     "version": version[:100],
                     "driver": "pymssql"
                 }
-            
+
             except Exception as e2:
                 logger.error(f"❌ فشل الاتصال بقاعدة البيانات (pymssql): {e2}")
-                
+
+                # إضافة معلومات تشخيصية
+                diagnostic_info = self._get_diagnostic_info(str(e), str(e2))
+
                 return {
                     "success": False,
                     "message": f"فشل الاتصال بقاعدة البيانات - Connection failed: {str(e)}",
                     "error": str(e),
-                    "alternative_error": str(e2)
+                    "alternative_error": str(e2),
+                    "diagnostic": diagnostic_info
                 }
+
+    def _get_diagnostic_info(self, error1: str, error2: str) -> Dict[str, Any]:
+        """
+        الحصول على معلومات تشخيصية - Get diagnostic information
+
+        Args:
+            error1: الخطأ الأول - First error
+            error2: الخطأ الثاني - Second error
+
+        Returns:
+            معلومات تشخيصية - Diagnostic information
+        """
+        diagnostic = {
+            "error_type": "unknown",
+            "possible_causes": [],
+            "solutions": []
+        }
+
+        error_combined = (error1 + " " + error2).lower()
+
+        # تحليل نوع الخطأ
+        if "timeout" in error_combined or "hyt00" in error_combined:
+            diagnostic["error_type"] = "timeout"
+            diagnostic["possible_causes"] = [
+                "عنوان Server خاطئ - Incorrect server address",
+                "SQL Server لا يقبل اتصالات TCP/IP - SQL Server not accepting TCP/IP",
+                "Firewall يحجب المنفذ 1433 - Firewall blocking port 1433",
+                "استخدام localhost بدلاً من host.docker.internal - Using localhost instead of host.docker.internal"
+            ]
+            diagnostic["solutions"] = [
+                "إذا كان SQL Server محلي، استخدم: host.docker.internal - If local, use: host.docker.internal",
+                "تأكد من تفعيل TCP/IP في SQL Server Configuration Manager",
+                "أضف قاعدة Firewall: New-NetFirewallRule -DisplayName 'SQL Server' -Direction Inbound -Protocol TCP -LocalPort 1433 -Action Allow",
+                "زد قيمة Timeout في .env: SQL_SERVER_TIMEOUT=60"
+            ]
+
+        elif "login failed" in error_combined or "28000" in error_combined:
+            diagnostic["error_type"] = "authentication"
+            diagnostic["possible_causes"] = [
+                "اسم المستخدم أو كلمة المرور خاطئة - Wrong username or password",
+                "SQL Server Authentication غير مفعّل - SQL Server Authentication not enabled",
+                "المستخدم ليس لديه صلاحيات - User doesn't have permissions"
+            ]
+            diagnostic["solutions"] = [
+                "تحقق من اسم المستخدم وكلمة المرور - Verify username and password",
+                "فعّل SQL Server Authentication في Server Properties → Security",
+                "تأكد من أن المستخدم لديه صلاحيات على قاعدة البيانات"
+            ]
+
+        elif "cannot open database" in error_combined or "42000" in error_combined:
+            diagnostic["error_type"] = "database_not_found"
+            diagnostic["possible_causes"] = [
+                "اسم قاعدة البيانات خاطئ - Wrong database name",
+                "قاعدة البيانات غير موجودة - Database doesn't exist",
+                "المستخدم ليس لديه صلاحيات - User doesn't have access"
+            ]
+            diagnostic["solutions"] = [
+                f"تحقق من اسم قاعدة البيانات: {self.database}",
+                "تأكد من وجود قاعدة البيانات في SQL Server",
+                "امنح المستخدم صلاحيات على قاعدة البيانات"
+            ]
+
+        elif "network" in error_combined or "08001" in error_combined:
+            diagnostic["error_type"] = "network"
+            diagnostic["possible_causes"] = [
+                "SQL Server لا يعمل - SQL Server not running",
+                "عنوان Server خاطئ - Wrong server address",
+                "مشاكل في الشبكة - Network issues"
+            ]
+            diagnostic["solutions"] = [
+                "تأكد من أن SQL Server يعمل: Services.msc",
+                "تحقق من عنوان Server: " + self.host,
+                "اختبر الاتصال: Test-NetConnection -ComputerName " + self.host + " -Port " + str(self.port)
+            ]
+
+        return diagnostic
+
+    def diagnose_connection(self) -> Dict[str, Any]:
+        """
+        تشخيص شامل لمشكلة الاتصال - Comprehensive connection diagnosis
+
+        Returns:
+            تقرير تشخيصي - Diagnostic report
+        """
+        logger.info("🔍 بدء التشخيص الشامل - Starting comprehensive diagnosis")
+
+        diagnosis = {
+            "timestamp": pd.Timestamp.now().isoformat(),
+            "configuration": {
+                "host": self.host,
+                "port": self.port,
+                "database": self.database,
+                "username": self.username,
+                "driver": self.driver,
+                "timeout": self.timeout
+            },
+            "checks": {},
+            "recommendations": [],
+            "overall_status": "unknown"
+        }
+
+        # 1. فحص ODBC Drivers المتاحة
+        available_drivers = self.get_available_drivers()
+        diagnosis["checks"]["odbc_drivers"] = {
+            "available": available_drivers,
+            "status": "ok" if available_drivers else "error",
+            "message": f"تم العثور على {len(available_drivers)} driver(s)" if available_drivers else "لم يتم العثور على drivers"
+        }
+
+        if not available_drivers:
+            diagnosis["recommendations"].append({
+                "priority": "high",
+                "message": "قم بإعادة بناء Docker container لتثبيت ODBC Driver",
+                "command": "docker-compose build --no-cache && docker-compose up -d"
+            })
+
+        # 2. فحص إعدادات الاتصال
+        config_issues = []
+
+        if self.host in ["localhost", "127.0.0.1", "(local)"]:
+            config_issues.append("استخدام localhost - يجب استخدام host.docker.internal للـ SQL Server المحلي")
+            diagnosis["recommendations"].append({
+                "priority": "critical",
+                "message": "استخدم host.docker.internal بدلاً من localhost",
+                "fix": "SQL_SERVER_HOST=host.docker.internal"
+            })
+
+        if not self.password:
+            config_issues.append("كلمة المرور فارغة")
+            diagnosis["recommendations"].append({
+                "priority": "high",
+                "message": "تأكد من إدخال كلمة المرور في .env",
+                "fix": "SQL_SERVER_PASSWORD=YourPassword"
+            })
+
+        diagnosis["checks"]["configuration"] = {
+            "status": "ok" if not config_issues else "warning",
+            "issues": config_issues
+        }
+
+        # 3. محاولة الاتصال وتحليل الخطأ
+        try:
+            conn = self.get_pyodbc_connection()
+            cursor = conn.cursor()
+            cursor.execute("SELECT @@VERSION, DB_NAME(), SUSER_NAME()")
+            result = cursor.fetchone()
+            version = result[0]
+            current_db = result[1]
+            current_user = result[2]
+            cursor.close()
+            conn.close()
+
+            diagnosis["checks"]["connection"] = {
+                "status": "success",
+                "message": "الاتصال ناجح",
+                "details": {
+                    "version": version[:100],
+                    "current_database": current_db,
+                    "current_user": current_user
+                }
+            }
+            diagnosis["overall_status"] = "success"
+
+        except Exception as e:
+            error_str = str(e)
+            diagnosis["checks"]["connection"] = {
+                "status": "error",
+                "message": "فشل الاتصال",
+                "error": error_str
+            }
+
+            # تحليل تفصيلي للخطأ
+            diagnostic_info = self._get_diagnostic_info(error_str, "")
+            diagnosis["error_analysis"] = diagnostic_info
+
+            # إضافة التوصيات من التحليل
+            for solution in diagnostic_info.get("solutions", []):
+                diagnosis["recommendations"].append({
+                    "priority": "high",
+                    "message": solution
+                })
+
+            diagnosis["overall_status"] = "error"
+
+        # 4. فحص الشبكة (إذا فشل الاتصال)
+        if diagnosis["overall_status"] == "error":
+            diagnosis["checks"]["network"] = {
+                "status": "info",
+                "message": f"تحقق من إمكانية الوصول إلى {self.host}:{self.port}",
+                "test_command": f"Test-NetConnection -ComputerName {self.host} -Port {self.port}"
+            }
+
+        logger.info(f"✅ انتهى التشخيص - Status: {diagnosis['overall_status']}")
+        return diagnosis
     
     def get_available_drivers(self) -> List[str]:
         """

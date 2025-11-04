@@ -98,24 +98,102 @@ class DatabaseConnection:
                     "alternative_error": str(e2)
                 }
     
+    def get_available_drivers(self) -> List[str]:
+        """
+        الحصول على قائمة drivers المتاحة - Get list of available drivers
+
+        Returns:
+            قائمة drivers - List of available drivers
+        """
+        try:
+            drivers = pyodbc.drivers()
+            logger.info(f"ODBC Drivers المتاحة: {drivers}")
+            return drivers
+        except Exception as e:
+            logger.warning(f"فشل الحصول على قائمة drivers: {e}")
+            return []
+
+    def get_best_driver(self) -> str:
+        """
+        الحصول على أفضل driver متاح - Get best available driver
+
+        Returns:
+            اسم driver - Driver name
+        """
+        available_drivers = self.get_available_drivers()
+
+        # قائمة drivers بالترتيب من الأفضل إلى الأقل
+        preferred_drivers = [
+            "ODBC Driver 18 for SQL Server",
+            "ODBC Driver 17 for SQL Server",
+            "ODBC Driver 13 for SQL Server",
+            "ODBC Driver 11 for SQL Server",
+            "FreeTDS",
+            "SQL Server"
+        ]
+
+        for driver in preferred_drivers:
+            if driver in available_drivers:
+                logger.info(f"تم اختيار driver: {driver}")
+                return driver
+
+        # إذا لم يتم العثور على أي driver، استخدام الافتراضي
+        if available_drivers:
+            logger.warning(f"استخدام driver افتراضي: {available_drivers[0]}")
+            return available_drivers[0]
+
+        # إذا لم يتم العثور على أي driver، استخدام القيمة من config
+        logger.warning(f"لم يتم العثور على drivers، استخدام: {self.driver}")
+        return self.driver
+
     def get_pyodbc_connection(self):
         """
         الحصول على اتصال pyodbc - Get pyodbc connection
-        
+
         Returns:
             اتصال قاعدة البيانات - Database connection
         """
-        connection_string = (
-            f"DRIVER={{{self.driver}}};"
-            f"SERVER={self.host},{self.port};"
-            f"DATABASE={self.database};"
-            f"UID={self.username};"
-            f"PWD={self.password};"
-            f"Timeout={self.timeout};"
-        )
-        
-        logger.info(f"الاتصال بـ SQL Server: {self.host}:{self.port}/{self.database}")
-        return pyodbc.connect(connection_string)
+        # محاولة استخدام driver محدد أولاً
+        driver = self.driver
+
+        try:
+            connection_string = (
+                f"DRIVER={{{driver}}};"
+                f"SERVER={self.host},{self.port};"
+                f"DATABASE={self.database};"
+                f"UID={self.username};"
+                f"PWD={self.password};"
+                f"Timeout={self.timeout};"
+            )
+
+            logger.info(f"الاتصال بـ SQL Server باستخدام {driver}: {self.host}:{self.port}/{self.database}")
+            return pyodbc.connect(connection_string)
+
+        except Exception as e:
+            logger.warning(f"فشل الاتصال باستخدام {driver}: {e}")
+
+            # محاولة استخدام أفضل driver متاح
+            best_driver = self.get_best_driver()
+
+            if best_driver != driver:
+                try:
+                    connection_string = (
+                        f"DRIVER={{{best_driver}}};"
+                        f"SERVER={self.host},{self.port};"
+                        f"DATABASE={self.database};"
+                        f"UID={self.username};"
+                        f"PWD={self.password};"
+                        f"Timeout={self.timeout};"
+                    )
+
+                    logger.info(f"محاولة الاتصال باستخدام {best_driver}")
+                    return pyodbc.connect(connection_string)
+
+                except Exception as e2:
+                    logger.error(f"فشل الاتصال باستخدام {best_driver}: {e2}")
+                    raise
+            else:
+                raise
     
     def get_pymssql_connection(self):
         """

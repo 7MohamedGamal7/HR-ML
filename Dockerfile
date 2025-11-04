@@ -15,8 +15,22 @@ ENV PYTHONUNBUFFERED=1 \
 RUN apt-get update && apt-get install -y \
     curl \
     gnupg \
+    gnupg2 \
+    apt-transport-https \
+    ca-certificates \
     unixodbc \
     unixodbc-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# تثبيت Microsoft ODBC Driver 17 for SQL Server
+# Install Microsoft ODBC Driver 17 for SQL Server
+RUN curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg \
+    && curl -fsSL https://packages.microsoft.com/config/debian/12/prod.list | tee /etc/apt/sources.list.d/mssql-release.list \
+    && apt-get update \
+    && ACCEPT_EULA=Y apt-get install -y msodbcsql17 \
+    && ACCEPT_EULA=Y apt-get install -y mssql-tools \
+    && echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> /etc/bash.bashrc \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # إنشاء مستخدم غير جذري - Create non-root user

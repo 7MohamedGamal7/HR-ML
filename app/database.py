@@ -26,16 +26,27 @@ from app.config import (
 
 class DatabaseConnection:
     """مدير الاتصال بقاعدة البيانات - Database Connection Manager"""
-    
-    def __init__(self):
-        """تهيئة مدير الاتصال - Initialize connection manager"""
-        self.host = SQL_SERVER_HOST
-        self.port = SQL_SERVER_PORT
-        self.database = SQL_SERVER_DATABASE
-        self.username = SQL_SERVER_USERNAME
-        self.password = SQL_SERVER_PASSWORD
-        self.driver = SQL_SERVER_DRIVER
-        self.timeout = SQL_SERVER_TIMEOUT
+
+    def __init__(self, host=None, port=None, database=None, username=None, password=None, driver=None, timeout=None):
+        """
+        تهيئة مدير الاتصال - Initialize connection manager
+
+        Parameters:
+            host: عنوان الخادم (اختياري - يستخدم .env إذا لم يُحدد)
+            port: المنفذ (اختياري)
+            database: اسم قاعدة البيانات (اختياري)
+            username: اسم المستخدم (اختياري)
+            password: كلمة المرور (اختياري)
+            driver: اسم Driver (اختياري)
+            timeout: مهلة الاتصال (اختياري)
+        """
+        self.host = host or SQL_SERVER_HOST
+        self.port = port or SQL_SERVER_PORT
+        self.database = database or SQL_SERVER_DATABASE
+        self.username = username or SQL_SERVER_USERNAME
+        self.password = password or SQL_SERVER_PASSWORD
+        self.driver = driver or SQL_SERVER_DRIVER
+        self.timeout = timeout or SQL_SERVER_TIMEOUT
         self.connection = None
         self.engine = None
     

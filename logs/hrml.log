@@ -226,3 +226,95 @@
 2025-11-04 11:45:48.124 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
 2025-11-04 11:45:48.124 | INFO     | app.database:get_best_driver:335 - تم اختيار driver: ODBC Driver 17 for SQL Server
 2025-11-04 11:45:48.124 | INFO     | app.database:diagnose_connection:296 - ✅ انتهى التشخيص - Status: error
+2025-11-04 13:16:46.456 | INFO     | app.database:get_pyodbc_connection:367 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: localhost:1433/HR_Database
+2025-11-04 13:17:01.460 | WARNING  | app.database:get_pyodbc_connection:371 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 13:17:01.460 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 13:17:01.460 | INFO     | app.database:get_best_driver:335 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 13:17:01.461 | ERROR    | app.database:test_connection:69 - ❌ فشل الاتصال بقاعدة البيانات: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 13:17:01.461 | INFO     | app.database:get_pymssql_connection:403 - الاتصال بـ SQL Server (pymssql): localhost:1433/HR_Database
+2025-11-04 13:17:10.483 | ERROR    | app.database:test_connection:92 - ❌ فشل الاتصال بقاعدة البيانات (pymssql): (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\n')
+2025-11-04 13:18:25.997 | INFO     | app.database:get_pyodbc_connection:367 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: localhost:1433/HR_Database
+2025-11-04 13:18:40.998 | WARNING  | app.database:get_pyodbc_connection:371 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 13:18:40.999 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 13:18:40.999 | INFO     | app.database:get_best_driver:335 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 13:18:40.999 | ERROR    | app.database:test_connection:69 - ❌ فشل الاتصال بقاعدة البيانات: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 13:18:41.000 | INFO     | app.database:get_pymssql_connection:403 - الاتصال بـ SQL Server (pymssql): localhost:1433/HR_Database
+2025-11-04 13:18:50.013 | ERROR    | app.database:test_connection:92 - ❌ فشل الاتصال بقاعدة البيانات (pymssql): (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\n')
+2025-11-04 13:55:44.857 | INFO     | app.database:get_pyodbc_connection:367 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: localhost:1433/HR_Database
+2025-11-04 13:55:59.858 | WARNING  | app.database:get_pyodbc_connection:371 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 13:55:59.859 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 13:55:59.859 | INFO     | app.database:get_best_driver:335 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 13:55:59.860 | ERROR    | app.database:test_connection:69 - ❌ فشل الاتصال بقاعدة البيانات: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 13:55:59.860 | INFO     | app.database:get_pymssql_connection:403 - الاتصال بـ SQL Server (pymssql): localhost:1433/HR_Database
+2025-11-04 13:56:08.871 | ERROR    | app.database:test_connection:92 - ❌ فشل الاتصال بقاعدة البيانات (pymssql): (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Connection refused (111)\n')
+2025-11-04 13:56:11.579 | INFO     | routers.train:diagnose_database_connection:366 - 🔍 بدء التشخيص الشامل للاتصال - Starting comprehensive connection diagnosis
+2025-11-04 13:56:11.579 | INFO     | app.database:diagnose_connection:188 - 🔍 بدء التشخيص الشامل - Starting comprehensive diagnosis
+2025-11-04 13:56:11.580 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 13:56:11.580 | INFO     | app.database:get_pyodbc_connection:367 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: localhost:1433/HR_Database
+2025-11-04 13:56:26.582 | WARNING  | app.database:get_pyodbc_connection:371 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 13:56:26.582 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 13:56:26.583 | INFO     | app.database:get_best_driver:335 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 13:56:26.583 | INFO     | app.database:diagnose_connection:296 - ✅ انتهى التشخيص - Status: error
+2025-11-04 14:00:58.386 | INFO     | run:shutdown_event:93 - ⏹️  إيقاف النظام...
+2025-11-04 14:01:01.771 | INFO     | run:startup_event:83 - ============================================================
+2025-11-04 14:01:01.772 | INFO     | run:startup_event:84 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-04 14:01:01.772 | INFO     | run:startup_event:85 - 📌 الإصدار: 2.0.0
+2025-11-04 14:01:01.772 | INFO     | run:startup_event:86 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-04 14:01:01.772 | INFO     | run:startup_event:87 - ============================================================
+2025-11-04 14:01:21.829 | INFO     | routers.train:diagnose_database_connection:366 - 🔍 بدء التشخيص الشامل للاتصال - Starting comprehensive connection diagnosis
+2025-11-04 14:01:21.829 | INFO     | app.database:diagnose_connection:188 - 🔍 بدء التشخيص الشامل - Starting comprehensive diagnosis
+2025-11-04 14:01:21.829 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 14:01:21.829 | INFO     | app.database:get_pyodbc_connection:367 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: localhost:1433/HR_Database
+2025-11-04 14:01:36.835 | WARNING  | app.database:get_pyodbc_connection:371 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 14:01:36.835 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 14:01:36.835 | INFO     | app.database:get_best_driver:335 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 14:01:36.835 | INFO     | app.database:diagnose_connection:296 - ✅ انتهى التشخيص - Status: error
+2025-11-04 14:02:36.998 | INFO     | run:shutdown_event:93 - ⏹️  إيقاف النظام...
+2025-11-04 14:02:39.687 | INFO     | run:startup_event:83 - ============================================================
+2025-11-04 14:02:39.688 | INFO     | run:startup_event:84 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-04 14:02:39.688 | INFO     | run:startup_event:85 - 📌 الإصدار: 2.0.0
+2025-11-04 14:02:39.688 | INFO     | run:startup_event:86 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-04 14:02:39.689 | INFO     | run:startup_event:87 - ============================================================
+2025-11-04 14:03:00.141 | INFO     | routers.train:diagnose_database_connection:366 - 🔍 بدء التشخيص الشامل للاتصال - Starting comprehensive connection diagnosis
+2025-11-04 14:03:00.142 | INFO     | app.database:diagnose_connection:188 - 🔍 بدء التشخيص الشامل - Starting comprehensive diagnosis
+2025-11-04 14:03:00.142 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 14:03:00.142 | INFO     | app.database:get_pyodbc_connection:367 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: localhost:1433/HR_Database
+2025-11-04 14:03:15.153 | WARNING  | app.database:get_pyodbc_connection:371 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 14:03:15.154 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 14:03:15.154 | INFO     | app.database:get_best_driver:335 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 14:03:15.155 | INFO     | app.database:diagnose_connection:296 - ✅ انتهى التشخيص - Status: error
+2025-11-04 14:03:54.365 | INFO     | run:shutdown_event:93 - ⏹️  إيقاف النظام...
+2025-11-04 14:03:57.427 | INFO     | run:startup_event:83 - ============================================================
+2025-11-04 14:03:57.427 | INFO     | run:startup_event:84 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-04 14:03:57.428 | INFO     | run:startup_event:85 - 📌 الإصدار: 2.0.0
+2025-11-04 14:03:57.428 | INFO     | run:startup_event:86 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-04 14:03:57.428 | INFO     | run:startup_event:87 - ============================================================
+2025-11-04 14:04:16.852 | INFO     | routers.train:diagnose_database_connection:366 - 🔍 بدء التشخيص الشامل للاتصال - Starting comprehensive connection diagnosis
+2025-11-04 14:04:16.853 | INFO     | app.database:diagnose_connection:188 - 🔍 بدء التشخيص الشامل - Starting comprehensive diagnosis
+2025-11-04 14:04:16.855 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 14:04:16.855 | INFO     | app.database:get_pyodbc_connection:367 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: localhost:1433/HR_Database
+2025-11-04 14:04:31.875 | WARNING  | app.database:get_pyodbc_connection:371 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+2025-11-04 14:04:31.876 | INFO     | app.database:get_available_drivers:308 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 14:04:31.876 | INFO     | app.database:get_best_driver:335 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 14:04:31.876 | INFO     | app.database:diagnose_connection:296 - ✅ انتهى التشخيص - Status: error
+2025-11-04 14:05:14.122 | INFO     | run:shutdown_event:93 - ⏹️  إيقاف النظام...
+2025-11-04 14:07:12.433 | INFO     | run:startup_event:83 - ============================================================
+2025-11-04 14:07:12.433 | INFO     | run:startup_event:84 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-04 14:07:12.434 | INFO     | run:startup_event:85 - 📌 الإصدار: 2.0.0
+2025-11-04 14:07:12.434 | INFO     | run:startup_event:86 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-04 14:07:12.434 | INFO     | run:startup_event:87 - ============================================================
+2025-11-04 14:07:33.756 | INFO     | routers.train:diagnose_database_connection:379 - 🔍 بدء التشخيص الشامل للاتصال - Starting comprehensive connection diagnosis
+2025-11-04 14:07:33.756 | INFO     | routers.train:diagnose_database_connection:380 - 📊 المعاملات المستلمة - Received params: host=host.docker.internal, port=1433, database=TestDB, username=testuser, password=***
+2025-11-04 14:07:33.756 | INFO     | routers.train:diagnose_database_connection:384 - 📝 استخدام معلومات اتصال مخصصة - Using custom connection info
+2025-11-04 14:07:33.757 | INFO     | app.database:diagnose_connection:199 - 🔍 بدء التشخيص الشامل - Starting comprehensive diagnosis
+2025-11-04 14:07:33.757 | INFO     | app.database:get_available_drivers:319 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 14:07:33.757 | INFO     | app.database:get_pyodbc_connection:378 - الاتصال بـ SQL Server باستخدام ODBC Driver 17 for SQL Server: host.docker.internal:1433/TestDB
+2025-11-04 14:07:33.779 | WARNING  | app.database:get_pyodbc_connection:382 - فشل الاتصال باستخدام ODBC Driver 17 for SQL Server: ('28000', "[28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'testuser'. (18456) (SQLDriverConnect)")
+2025-11-04 14:07:33.779 | INFO     | app.database:get_available_drivers:319 - ODBC Drivers المتاحة: ['ODBC Driver 17 for SQL Server']
+2025-11-04 14:07:33.779 | INFO     | app.database:get_best_driver:346 - تم اختيار driver: ODBC Driver 17 for SQL Server
+2025-11-04 14:07:33.779 | INFO     | app.database:diagnose_connection:307 - ✅ انتهى التشخيص - Status: error
+2025-11-04 14:18:23.838 | INFO     | run:startup_event:83 - ============================================================
+2025-11-04 14:18:23.839 | INFO     | run:startup_event:84 - 🚀 بدء تشغيل نظام الموارد البشرية الذكي - Smart HR System
+2025-11-04 14:18:23.839 | INFO     | run:startup_event:85 - 📌 الإصدار: 2.0.0
+2025-11-04 14:18:23.839 | INFO     | run:startup_event:86 - 📚 الوثائق: http://localhost:8000/docs
+2025-11-04 14:18:23.839 | INFO     | run:startup_event:87 - ============================================================

@@ -178,7 +178,23 @@ async function diagnoseDatabaseConnection() {
     window.dashboard.showLoading();
 
     try {
-        const response = await fetch(`/train/database/diagnose?lang=${lang}`);
+        // جمع معلومات الاتصال من النموذج
+        const host = document.getElementById('dbHost')?.value || '';
+        const port = document.getElementById('dbPort')?.value || '';
+        const database = document.getElementById('dbName')?.value || '';
+        const username = document.getElementById('dbUsername')?.value || '';
+        const password = document.getElementById('dbPassword')?.value || '';
+
+        // بناء URL مع المعاملات
+        const params = new URLSearchParams({ lang });
+
+        if (host) params.append('host', host);
+        if (port) params.append('port', port);
+        if (database) params.append('database', database);
+        if (username) params.append('username', username);
+        if (password) params.append('password', password);
+
+        const response = await fetch(`/train/database/diagnose?${params.toString()}`);
         const result = await response.json();
 
         if (result.diagnosis) {

@@ -352,6 +352,11 @@ async def test_database_connection(
 
 @router.get("/database/diagnose")
 async def diagnose_database_connection(
+    host: str = Query(None, description="عنوان الخادم - Server host"),
+    port: str = Query(None, description="المنفذ - Port"),
+    database: str = Query(None, description="اسم قاعدة البيانات - Database name"),
+    username: str = Query(None, description="اسم المستخدم - Username"),
+    password: str = Query(None, description="كلمة المرور - Password"),
     lang: str = Query("ar", description="اللغة - Language (ar/en)")
 ):
     """
@@ -359,13 +364,43 @@ async def diagnose_database_connection(
 
     يقوم بفحص شامل ويقدم توصيات للحل - Performs comprehensive check and provides recommendations
 
+    Parameters:
+        - host: عنوان الخادم (اختياري - يستخدم .env إذا لم يُحدد)
+        - port: المنفذ (اختياري)
+        - database: اسم قاعدة البيانات (اختياري)
+        - username: اسم المستخدم (اختياري)
+        - password: كلمة المرور (اختياري)
+        - lang: اللغة (ar/en)
+
     Returns:
         تقرير تشخيصي - Diagnostic report
     """
     try:
         logger.info("🔍 بدء التشخيص الشامل للاتصال - Starting comprehensive connection diagnosis")
+        logger.info(f"📊 المعاملات المستلمة - Received params: host={host}, port={port}, database={database}, username={username}, password={'***' if password else None}")
 
-        diagnosis = db.diagnose_connection()
+        # إذا تم تمرير معلومات اتصال مخصصة، استخدمها
+        if any([host, port, database, username, password]):
+            logger.info("📝 استخدام معلومات اتصال مخصصة - Using custom connection info")
+
+            # إنشاء instance مؤقت من DatabaseConnection بالإعدادات المخصصة
+            from app.database import DatabaseConnection
+
+            custom_db = DatabaseConnection(
+                host=host,
+                port=port,
+                database=database,
+                username=username,
+                password=password,
+                driver=db.driver,
+                timeout=db.timeout
+            )
+
+            diagnosis = custom_db.diagnose_connection()
+        else:
+            # استخدام الإعدادات من .env
+            logger.info("📝 استخدام إعدادات .env - Using .env settings")
+            diagnosis = db.diagnose_connection()
 
         # إضافة رسائل مترجمة
         if lang == "ar":

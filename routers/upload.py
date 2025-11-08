@@ -181,8 +181,10 @@ async def upload_dataset(
             summary = {}
 
         return {
+            "status": "success",
             "detail": get_message("file_uploaded", lang),
             "message": get_message("dataset_cleaned", lang),
+            "filename": file.filename,
             "rows": len(df),
             "columns": len(df.columns),
             "shape": list(df.shape),

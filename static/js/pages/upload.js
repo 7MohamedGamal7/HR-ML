@@ -166,14 +166,32 @@ async function uploadFile() {
         
         setTimeout(() => {
             progressDiv.style.display = 'none';
-            
+
             if (result.status === 'success') {
-                resultDiv.innerHTML = `
+                // عرض رسالة النجاح - Show success message
+                let successHTML = `
                     <div class="alert alert-success">
                         <h5><i class="fas fa-check-circle"></i> ${t.upload_success}</h5>
                         <p class="mb-2">${lang === 'ar' ? 'اسم الملف:' : 'File name:'} <strong>${result.filename}</strong></p>
                         <p class="mb-2">${lang === 'ar' ? 'عدد الصفوف:' : 'Rows:'} <strong>${window.dashboard.formatNumber(result.rows)}</strong></p>
                         <p class="mb-0">${lang === 'ar' ? 'عدد الأعمدة:' : 'Columns:'} <strong>${result.columns}</strong></p>
+                `;
+
+                // إضافة تحذيرات التحقق إن وجدت - Add validation warnings if any
+                if (result.validation_warnings && result.validation_warnings.length > 0) {
+                    successHTML += `
+                        <hr>
+                        <div class="alert alert-warning mb-0 mt-2">
+                            <h6><i class="fas fa-exclamation-triangle"></i> ${lang === 'ar' ? 'تحذيرات التحقق:' : 'Validation Warnings:'}</h6>
+                            <ul class="mb-0 small">
+                                ${result.validation_warnings.slice(0, 5).map(w => `<li>${w}</li>`).join('')}
+                                ${result.validation_warnings.length > 5 ? `<li><em>${lang === 'ar' ? `و ${result.validation_warnings.length - 5} تحذيرات أخرى...` : `and ${result.validation_warnings.length - 5} more warnings...`}</em></li>` : ''}
+                            </ul>
+                        </div>
+                    `;
+                }
+
+                successHTML += `
                         <hr>
                         <div class="d-flex gap-2">
                             <button class="btn btn-primary" onclick="window.dashboard.loadPage('train')">
@@ -185,7 +203,9 @@ async function uploadFile() {
                         </div>
                     </div>
                 `;
-                
+
+                resultDiv.innerHTML = successHTML;
+
                 // Store upload result for preview
                 window.uploadedData = result;
             } else {
